@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "Profile Page";
+}
+@model ProfileViewModel
+<!-- ======= About Section ======= -->
+
+<section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <h2>About</h2> 
+            <div class="underline"></div>
+            <p class="text-lg-center">This is a brief summary about me. It contains basic information about myself, my skills and projects done</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <img src="~/@Model.ProfileImageUrl" class="img-fluid" alt="fadeni ayobami">
+            </div>
+            <div class="col-lg-8 pt-4 pt-lg-0 content">
+                <h3>@Model.Job</h3>
+                <p class="font-italic">
+                    @Model.Bio 
+                </p>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul>
+                            <li><i class="fa fa-angle-double-right"></i>  <strong>Birthday:</strong> @Model.DateOfBirth</li>
+                            <li><i class="fa fa-angle-double-right"></i>  <strong>Education:</strong> @Model.Education</li>
+                            <li><i class="fa fa-angle-double-right"></i>  <strong>Phone:</strong> @Model.PhoneNumber</li>
+                            <li><i class="fa fa-angle-double-right"></i>  <strong>City:</strong> @Model.City</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul>
+                            <li><i class="fa fa-angle-double-right"></i>  <strong>Age:</strong> @Model.Age</li>
+                            <li><i class="fa fa-angle-double-right"></i>  <strong>Degree:</strong> @Model.Degree</li>
+                            <li><i class="fa fa-angle-double-right"></i>  <strong>Gender:</strong> @Model.Gender</li>
+                            <li><i class="fa fa-angle-double-right"></i>  <strong>Work Status:</strong> @Model.WorkStatus</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section><!-- End About Section -->
+<!-- ======= Skills Section ======= -->
+<section id="skills" class="skills">
+    <div class="section-title">
+        <h2>Skills</h2>
+        <div class="underline"></div>
+        <p>Here are a couple of programming languages i've picked up over the years. It shows how well i have worked with the language and how good i am with it</p>
+    </div>
+    <div class="prog-skills">
+        <div class="row">
+            @for (int i = 0; i < Model.Skills.Count/2; i++)
+            {
+                <div class="col-lg-6">
+                    <div class="skill">
+                        <label asp-for="@Model.Skills[i].Name">@Model.Skills[i].Name:</label>
+                        <progress value=@Model.Skills[i].Progress max="100"> @Model.Skills[i].Progress% </progress>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="skill">
+                        <label asp-for="@Model.Skills[i+3].Name">@Model.Skills[i+3].Name:</label>
+                        <progress value=@Model.Skills[i+3].Progress max="100"> @Model.Skills[i+3].Progress% </progress>
+                    </div>
+                </div>
+            }
+        </div>   
+    </div>
+
+</section><!-- End Skills Section -->
+<!-- ======= Work Section ======= -->
+<section id="projects" class="projects">
+    <div class="section-title">
+        <h2>Projects</h2>
+        <div class="underline"></div>
+        <p class="text-lg-center">Here are a couple of projects i worked on with their respective repository links.</p>
+    </div>
+    <div class="works">
+        @foreach (var project in Model.Projects)
+        {
+        <div class="card" style="width: 22rem;">
+            <img class="card-img-top" src=~/@project.ImageUrl alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@project.Name</h5>
+                <p class="card-text">@project.Body</p>
+                <a href=@project.Url class="btn">Show More..</a>
+            </div>
+        </div>
+        }
+        
+        </div>
+    <div class="github"><a href="https://github.com/LegendaryAy" class="btn">Click this link to my GitHub Page for More...</a></div>
+
+</section><!-- End Skills Section -->

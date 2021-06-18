@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+@model ContactLocationViewModel
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Contact</h2>
+                    <div class="underline"></div>
+                    <p class="text-lg-center">Here are my Contact details with a Frame of Google Maps showing my current office location .</p>
+                </div>
+
+                <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.375479696933!2d3.6280712140295335!3d6.474033295316586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf97abff1bf25%3A0x5e89106007f10176!2sDecagon%20Institute%20(Sangotedo%20Campus)!5e0!3m2!1sen!2sng!4v1621195396634!5m2!1sen!2sng" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+                <div class="row mt-5 mb-5 display">
+
+                    <div class="col-lg-4">
+                        <div class="info">
+                            <div class="address">
+                                <i class="fa fa-map-marker"></i>
+                                <h4>Location:</h4>
+                                <p>@Model.City</p>
+                            </div>
+
+                            <div class="email">
+                                <i class="fa fa-envelope"></i>
+                                <h4>Email:</h4>
+                                <p>@Model.Email</p>
+                            </div>
+
+                            <div class="phone">
+                                <i class="fa fa-phone"></i>
+                                <h4>Call:</h4>
+                                <p>@Model.PhoneNumber</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-8 mt-5 mt-lg-0">
+
+                        <form method="post" role="form" class="email-form" asp-action="Form" asp-controller="Contact">
+                            <div class="form-row">
+                                <div class="col-md-6 form-group">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"/>
+                                    <div class="validate"></div>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"/>
+                                    <div class="validate"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"/>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="text-center"><button type="submit">Send Message</button></div>
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Contact Section -->

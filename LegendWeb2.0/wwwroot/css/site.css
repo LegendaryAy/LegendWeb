@@ -1,0 +1,544 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #fff;
+}
+
+a {
+    color: #26537a;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #539cd1;
+        text-decoration: none;
+    }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Raleway", sans-serif;
+}
+
+#main {
+    margin-top: 50px;
+}
+
+@media (max-width: 992px) {
+    #main {
+        margin-top: 30px;
+    }
+}
+
+/*--------------------------------------------------------------
+  # Header
+  --------------------------------------------------------------*/
+#header {
+    background: #FDFFF7;
+    box-shadow: 0px 0px 25px 0 rgba(0, 0, 0, 0.08);
+    z-index: 997;
+    padding: 15px 0;
+}
+
+    #header .logo {
+        font-size: 32px;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        font-weight: 400;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+        #header .logo a {
+            color: #1F1B01;
+            text-decoration: none;
+        }
+
+        #header .logo img {
+            max-height: 40px;
+        }
+
+    #header .menu-btn {
+        display: none;
+    }
+
+.sidenav {
+    display: none;
+}
+    @media (max-width: 992px) {
+        #header .logo {
+            font-size: 28px;
+        }
+
+        #header .menu-btn {
+            display: block;
+        }
+
+        #header .menu {
+            width: 35px;
+            height: 5px;
+            background-color: #1F1B01;
+            margin: 6px 0;
+        }
+
+        .show-sidenav {
+            display: block;
+        }
+
+        .sidenav {
+            height: 30%;
+            width: 100%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            margin-top: 70px;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow-x: hidden;
+            padding-top: 30px;
+            transition: 0.5s;
+            text-align: center;
+        }
+
+            /* The navigation menu links */
+            .sidenav a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 20px;
+                color: #FDFFF7;
+                display: block;
+                transition: 0.3s;
+            }
+
+                /* When you mouse over the navigation links, change their color */
+                .sidenav a:hover {
+                    color: #f1f1f1;
+                    text-decoration: none;
+                }
+
+            /* Position and style the close button (top right corner) */
+            .sidenav .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+    }
+
+/*--------------------------------------------------------------
+  # Navigation Menu
+  --------------------------------------------------------------*/
+.nav-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-menu > ul {
+    display: flex;
+}
+
+    .nav-menu > ul > li {
+        position: relative;
+        white-space: nowrap;
+        padding: 10px 0 10px 40px;
+    }
+
+.nav-menu a {
+    display: block;
+    position: relative;
+    color: #888888;
+    transition: 0.3s;
+    font-size: 15px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+}
+
+.nav-menu > ul > li > a:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #26537a;
+    visibility: hidden;
+    width: 0px;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-menu a:hover:before, .nav-menu li:hover > a:before, .nav-menu .active > a:before {
+    visibility: visible;
+    width: 25px;
+}
+
+.nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
+    color: #1F1B01;
+    text-decoration: none;
+}
+
+@media (max-width: 992px) {
+}
+
+/*--------------------------------------------------------------
+  # Hero Section
+  --------------------------------------------------------------*/
+#hero {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url("../images/1.jpg") top center;
+    background-size: cover;
+}
+
+    #hero .container {
+        padding-top: 70px;
+        position: relative;
+    }
+
+@media (max-width: 992px) {
+    #hero .container {
+        padding-top: 58px;
+    }
+}
+
+#hero h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #FDFFF7;
+}
+
+#hero h2 {
+    color: #FDFFF7;
+    margin: 10px 0 0 0;
+    font-size: 22px;
+}
+
+#hero .btn-about {
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 40px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin-top: 30px;
+    color: #fff;
+    background: #26537a;
+}
+
+    #hero .btn-about:hover {
+        text-decoration: none;
+        background: #539cd1;
+    }
+
+@media (min-width: 1024px) {
+    #hero {
+        background-attachment: fixed;
+    }
+}
+
+@media (max-width: 992px) {
+    #hero:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    #hero h1 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    #hero h2 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
+/*--------------------------------------------------------------
+  # About
+  --------------------------------------------------------------*/
+#about {
+    padding-top: 120px;
+    color: #1F1B01;
+}
+
+.about h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.about span {
+    width: 100%;
+}
+
+    .about span a {
+        margin: 0px auto;
+    }
+
+.about h3 {
+    font-weight: 500;
+    font-size: 26px;
+}
+
+.about .content ul {
+    list-style: none;
+    padding: 0;
+}
+
+    .about .content ul li {
+        padding-bottom: 10px;
+    }
+
+    .about .content ul i {
+        font-size: 20px;
+        padding-right: 2px;
+        color: #26537a;
+    }
+
+.about .content p:last-child {
+    margin-bottom: 0;
+}
+
+.underline {
+    background-color: #26537a;
+    width: 5%;
+    height: 3px;
+    margin: 5px auto 20px;
+}
+
+/*--------------------------------------------------------------
+  # Skills
+  --------------------------------------------------------------*/
+#skills {
+    margin: 100px auto;
+    width: 90%;
+}
+
+    #skills h2 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 28px;
+        font-weight: 400;
+    }
+
+progress {
+    display: block;
+    width: 80%;
+    height: 15px;
+    border: none;
+    background-color: #fff;
+}
+
+    progress::-webkit-progress-bar {
+        background-color: #ddd;
+    }
+
+    progress::-webkit-progress-value {
+        background-color: #26537a;
+    }
+
+    progress::-moz-progress-bar {
+        background-color: #26537a;
+    }
+
+/*--------------------------------------------------------------
+  # Projects
+  --------------------------------------------------------------*/
+#projects {
+    margin: 100px auto;
+    width: 90%;
+}
+
+    #projects h2 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 28px;
+        font-weight: 400;
+    }
+
+    #projects img {
+        width: 100%;
+        margin: 3% 0;
+        height: 30vh;
+    }
+
+.works {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    width: 100%;
+    margin: 20px 0px;
+    box-shadow: 5px 10px 8px #888888;
+}
+
+.github {
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+#projects .btn {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 40px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin-top: 30px;
+    color: #fff;
+    background: #26537a;
+}
+
+    #projects .btn:hover {
+        color: #f1f1f1;
+        background-color: #539cd1;
+    }
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+#contact{
+    padding-top: 120px;
+}
+.contact .display {
+    margin-bottom: 30px;
+}
+
+.contact h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.contact .info {
+    width: 100%;
+    background: #fff;
+}
+
+    .contact .info i {
+        font-size: 20px;
+        color: #26537a;
+        float: left;
+        width: 44px;
+        height: 44px;
+        background: #effbf9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .contact .info h4 {
+        padding: 0 0 0 60px;
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #1F1B01;
+    }
+
+    .contact .info p {
+        padding: 0 0 0 60px;
+        margin-bottom: 0;
+        font-size: 14px;
+        color: #555555;
+    }
+
+    .contact .info .email, .contact .info .phone {
+        margin-top: 40px;
+    }
+
+        .contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
+            background: #26537a;
+            color: #fff;
+        }
+
+.contact .email-form {
+    width: 100%;
+    background: #fff;
+}
+
+    .contact .email-form .form-group {
+        padding-bottom: 8px;
+    }
+
+    .contact .email-form input, .contact .email-form textarea {
+        border-radius: 4px;
+        box-shadow: none;
+        font-size: 14px;
+    }
+
+        .contact .email-form input:focus, .contact .email-form textarea:focus {
+            border-color: #26537a;
+        }
+
+    .contact .email-form input {
+        height: 44px;
+    }
+
+    .contact .email-form textarea {
+        padding: 10px 12px;
+    }
+
+    .contact .email-form button[type="submit"] {
+        background: #26537a;
+        border: 0;
+        padding: 10px 30px 12px 30px;
+        color: #fff;
+        transition: 0.4s;
+        border-radius: 50px;
+    }
+
+        .contact .email-form button[type="submit"]:hover {
+            background: #539cd1;
+        }
+
+/*--------------------------------------------------------------
+  # Footer
+  --------------------------------------------------------------*/
+#footer {
+    background: #FDFFF7;
+    text-align: center;
+}
+
+    #footer .container {
+        padding: 30px 0px;
+        color: #1F1B01;
+        font-size: 18px;
+    }
+
+.social-links {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+    .social-links a {
+        color: #888888;
+        padding: 0px 6px;
+    }
+
+        .social-links a:hover {
+            color: #1F1B01;
+        }
